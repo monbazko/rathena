@@ -1933,14 +1933,14 @@ ACMD_FUNC(model)
 	nullpo_retr(-1, sd);
 
 	memset(atcmd_output, '\0', sizeof(atcmd_output));
-
+#if PACKETVER < 20231220
 	if (!message || !*message || sscanf(message, "%11d %11d %11d", &hair_style, &hair_color, &cloth_color) < 1) {
 		sprintf(atcmd_output, msg_txt(sd,991), // Please enter at least one value (usage: @model <hair ID: %d-%d> <hair color: %d-%d> <clothes color: %d-%d>).
 		        MIN_HAIR_STYLE, MAX_HAIR_STYLE, MIN_HAIR_COLOR, MAX_HAIR_COLOR, MIN_CLOTH_COLOR, MAX_CLOTH_COLOR);
 		clif_displaymessage(fd, atcmd_output);
 		return -1;
 	}
-
+#endif
 	if (hair_style >= MIN_HAIR_STYLE && hair_style <= MAX_HAIR_STYLE &&
 		hair_color >= MIN_HAIR_COLOR && hair_color <= MAX_HAIR_COLOR &&
 		cloth_color >= MIN_CLOTH_COLOR && cloth_color <= MAX_CLOTH_COLOR) {
@@ -11258,7 +11258,7 @@ ACMD_FUNC(setcard)
 		clif_displaymessage(fd, atcmd_output);
 		return -1;
 	}
-	if (position < EQP_HEAD_LOW || position > EQP_HEAD_MID) {
+	if (position < EQP_HEAD_LOW || position > EQP_SHADOW_ACC_L) {
 		clif_displaymessage(fd, msg_txt(sd,1531)); // Invalid position.
 		return -1;
 	}
