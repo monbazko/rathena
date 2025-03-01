@@ -2157,6 +2157,7 @@ enum e_hat_effects : int16{
 	HAT_EF_INKPAINTING_DAY,
 	HAT_EF_INKPAINTING_NIGHT,
 	HAT_EF_KUNG_FU_PANDA,
+	HAT_EF_C_MgSgPh_Potarl = 255,
 	HAT_EF_MAX
 };
 
