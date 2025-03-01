@@ -10972,12 +10972,9 @@ int32 skill_castend_nodamage_id (struct block_list *src, struct block_list *bl, 
 
 	case AG_ENERGY_CONVERSION:
 		if (status_get_sp(src) == status_get_max_sp(src)) {
-			if( sd != nullptr ){
 				clif_skill_fail( *sd, skill_id, USESKILL_FAIL );
+				break;
 			}
-			break;
-		}
-		
 		// Apply the SP gain to the caster
 		clif_skill_nodamage(src, *bl, skill_id, skill_lv);
 		status_heal(bl, 0, (skill_lv * (skill_lv + 1) / 2) * 40, 1);
