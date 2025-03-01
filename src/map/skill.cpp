@@ -5399,6 +5399,7 @@ int32 skill_castend_damage_id (struct block_list* src, struct block_list *bl, ui
 	case IG_IMPERIAL_CROSS:
 	case CD_EFFLIGO:
 	case ABC_FRENZY_SHOT:
+	case IQ_BLAZING_FLAME_BLAST:
 	case WH_HAWKRUSH:
 	case WH_HAWKBOOMERANG:
 	case TR_ROSEBLOSSOM:
