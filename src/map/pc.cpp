@@ -1349,7 +1349,13 @@ void pc_makesavestatus(map_session_data *sd) {
 		sd->status.clothes_color = 0;
 
 	if(!battle_config.save_body_style)
+	{
+#if PACKETVER >= 20231220
+		sd->status.body = sd->status.class_;
+#else
 		sd->status.body = 0;
+#endif
+	}
 
 	//Only copy the Cart/Peco/Falcon options, the rest are handled via
 	//status change load/saving. [Skotlex]
@@ -6766,7 +6772,7 @@ bool pc_steal_item(map_session_data *sd,struct block_list *bl, uint16 skill_lv)
 	status_data* md_status = status_get_status_data(*bl);
 
 	if (md->master_id || status_has_mode(md_status, MD_STATUSIMMUNE) || util::vector_exists(status_get_race2(md), RC2_TREASURE) ||
-		map_getmapflag(bl->m, MF_NOMOBLOOT) || // check noloot map flag [Lorky]
+		map_getmapflag(bl->m, MF_NOMOBLOOT) || md->get_bosstype() == BOSSTYPE_NONE && map_getmapflag(bl->m, MF_NOLOOTNORMALMOB) || // check noloot map flag [Lorky]
 		(battle_config.skill_steal_max_tries && //Reached limit of steal attempts. [Lupus]
 			md->state.steal_flag++ >= battle_config.skill_steal_max_tries)
   	) { //Can't steal from
@@ -10879,6 +10885,10 @@ bool pc_jobchange(map_session_data *sd,int32 job, char upper)
 
 	// Reset body style to 0 before changing job to avoid
 	// errors since not every job has a alternate outfit.
+#if PACKETVER >= 20231220
+	sd->status.body = job;
+	clif_changelook(&sd->bl,LOOK_BODY2,job);
+#else
 	sd->status.body = 0;
 	clif_changelook(sd,LOOK_BODY2,0);
 
