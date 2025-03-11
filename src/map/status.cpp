@@ -6190,8 +6190,11 @@ void status_calc_bl_main(struct block_list& bl, std::bitset<SCB_MAX> flag)
 	* No status changes alter these yet.
 	* if(flag[SCB_SIZE])
 	* if(flag[SCB_RACE])
-	* if(flag[SCB_RANGE])
 	**/
+
+	if (flag[SCB_RANGE]) {
+		status->rhw.range = b_status->rhw.range;
+	}
 
 	if(flag[SCB_MAXHP]) {
 		if( bl.type == BL_PC ) {
@@ -13019,7 +13022,9 @@ static bool status_change_start_post_delay(block_list* src, block_list* bl, sc_t
 				clif_changelook(bl,LOOK_WEAPON,0);
 				clif_changelook(bl,LOOK_SHIELD,0);
 				clif_changelook(bl,LOOK_CLOTHES_COLOR,vd->look[LOOK_CLOTHES_COLOR]);
+#if PACKETVER < 20231220
 				clif_changelook(bl,LOOK_BODY2,0);
+#endif
 				break;
 			case SC_STONE:
 			case SC_STONEWAIT:

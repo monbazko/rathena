@@ -522,6 +522,8 @@
 	export_constant(MF_NOBANK);
 	export_constant(MF_SPECIALPOPUP);
 	export_constant(MF_NOMACROCHECKER);
+	export_constant(MF_NOLOOTNORMALMOB);
+	export_constant(MF_NO_NPC_SELFDESTRUCTION_ON_ALL);
 
 	/* setcell types */
 	export_constant(CELL_WALKABLE);
@@ -7271,6 +7273,7 @@
 	export_constant(IG_BRILLIANT_HAT_BOX);
 	export_constant(IG_CHEST_OF_DEATH);
 	export_constant(IG_SHADOW_CUBE_SAK);
+	export_constant(IG_D_GW_EXTRACTOR);
 
 	/* unit stop walking */
 	export_constant(USW_NONE);
