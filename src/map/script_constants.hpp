@@ -1918,6 +1918,7 @@
 	export_constant(SC_CONTENTS_9);
 	export_constant(SC_CONTENTS_10);
 	export_constant(SC_MYSTERY_POWDER);
+	export_constant(SC_CHASING);
 	export_constant(SC_CONTENTS_26);
 	export_constant(SC_CONTENTS_27);
 	export_constant(SC_CONTENTS_28);
