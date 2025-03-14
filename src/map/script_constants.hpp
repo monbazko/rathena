@@ -1908,6 +1908,8 @@
 	export_constant(SC_EP16_DEF);
 	export_constant(SC_STR_SCROLL);
 	export_constant(SC_INT_SCROLL);
+	export_constant(SC_C_BUFF_1);
+	export_constant(SC_C_BUFF_2);
 	export_constant(SC_CONTENTS_1);
 	export_constant(SC_CONTENTS_2);
 	export_constant(SC_CONTENTS_3);
