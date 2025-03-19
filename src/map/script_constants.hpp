@@ -1989,7 +1989,6 @@
 	export_constant(SC_CONTENTS_18);
 	export_constant(SC_CONTENTS_19);
 	export_constant(SC_CONTENTS_20);
-	export_constant(SC_OVERCOMING_CRISIS);
 
 /// Do not modify code below this, until the end of the API hook, since it will be automatically generated again
 /// @APIHOOK_START(EFST_CONST)
@@ -10064,7 +10063,7 @@
 	export_constant(FOOTPRINT_EF_BUTTERFLY_BLUE);
 	export_constant(FOOTPRINT_EF_BUTTERFLY_PURPLE);
 	export_constant(FOOTPRINT_EF_BUTTERFLY_YELLOW);
-	export_constant(HAT_EF_hanmac_munch);
+	export_constant(HAT_EF_HANMAC_MUNCH);
 
 	/* pet catch */
 	export_constant(PET_CATCH_UNIVERSAL_NO_BOSS);
