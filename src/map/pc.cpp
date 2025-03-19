@@ -10887,7 +10887,7 @@ bool pc_jobchange(map_session_data *sd,int32 job, char upper)
 	// errors since not every job has a alternate outfit.
 #if PACKETVER >= 20231220
 	sd->status.body = job;
-	clif_changelook(&sd->bl,LOOK_BODY2,job);
+	clif_changelook(sd,LOOK_BODY2,job);
 #else
 	sd->status.body = 0;
 	clif_changelook(sd,LOOK_BODY2,0);
