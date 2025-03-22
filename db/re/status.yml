@@ -9737,6 +9737,17 @@ Body:
       Rising_Moon: true
       Midnight_Moon: true
       Dawn_Moon: true
+  - Status: Overcoming_Crisis
+    Icon: EFST_OVERCOMING_CRISIS
+    DurationLookup: HN_OVERCOMING_CRISIS
+    CalcFlags:
+      Patk: true
+      Smatk: true
+      MaxHp: true
+    Flags:
+      NoBanishingBuster: true
+      NoDispell: true
+      NoClearance: true
   - Status: Wild_Walk
     Icon: EFST_WILD_WALK
     DurationLookup: WH_WILD_WALK
