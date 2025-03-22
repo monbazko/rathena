@@ -1970,6 +1970,7 @@
 	export_constant(SC_DAWN_MOON);
 	export_constant(SC_STAR_BURST);
 	export_constant(SC_SKY_ENCHANT);
+	export_constant(SC_OVERCOMING_CRISIS);
 	export_constant(SC_WILD_WALK);
 	export_constant(SC_SHADOW_CLOCK);
 	export_constant(SC_SHINKIROU_CALL);
