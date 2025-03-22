@@ -3169,6 +3169,8 @@ static int32 status_get_hpbonus(struct block_list *bl, enum e_status_bonus type)
 			if (sc->getSCE(SC_ANGELUS))
 				bonus += sc->getSCE(SC_ANGELUS)->val1 * 50;
 #endif
+			if (sc->getSCE(SC_OVERCOMING_CRISIS))
+				bonus += sc->getSCE(SC_OVERCOMING_CRISIS)->val3;
 		}
 	} else if (type == STATUS_BONUS_RATE) {
 		status_change *sc = status_get_sc(bl);
@@ -8555,6 +8557,8 @@ static int16 status_calc_patk(struct block_list *bl, status_change *sc, int32 pa
 		patk += sc->getSCE(SC_TEMPORARY_COMMUNION)->val2;
 	if (sc->getSCE(SC_BLESSING_OF_M_CREATURES) != nullptr)
 		patk += sc->getSCE(SC_BLESSING_OF_M_CREATURES)->val2;
+	if (sc->getSCE(SC_OVERCOMING_CRISIS))
+		patk += sc->getSCE(SC_OVERCOMING_CRISIS)->val2;
 
 	return (int16)cap_value(patk, 0, SHRT_MAX);
 }
@@ -8590,6 +8594,8 @@ static int16 status_calc_smatk(struct block_list *bl, status_change *sc, int32 s
 		smatk += sc->getSCE(SC_TEMPORARY_COMMUNION)->val2;
 	if (sc->getSCE(SC_BLESSING_OF_M_CREATURES) != nullptr)
 		smatk += sc->getSCE(SC_BLESSING_OF_M_CREATURES)->val2;
+	if (sc->getSCE(SC_OVERCOMING_CRISIS))
+		smatk += sc->getSCE(SC_OVERCOMING_CRISIS)->val2;
 
 	return (int16)cap_value(smatk, 0, SHRT_MAX);
 }
@@ -12890,6 +12896,10 @@ int32 status_change_start(struct block_list* src, struct block_list* bl,enum sc_
 		case SC_STAR_BURST:
 			tick_time = status_get_sc_interval(type);
 			val4 = tick - tick_time; // Remaining time
+			break;
+		case SC_OVERCOMING_CRISIS:
+			val2 = 3 * val1;
+			val3 = 15000 * val1;
 			break;
 		case SC_WILD_WALK:
 			val2 = (1 + val1 / 2) * 25;
