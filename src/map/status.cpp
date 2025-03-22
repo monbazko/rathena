@@ -12993,6 +12993,10 @@ static bool status_change_start_post_delay(block_list* src, block_list* bl, sc_t
 			tick_time = status_get_sc_interval(type);
 			val4 = tick - tick_time; // Remaining time
 			break;
+		case SC_OVERCOMING_CRISIS:
+			val2 = 3 * val1;
+			val3 = 15000 * val1;
+			break;
 		case SC_WILD_WALK:
 			val2 = (1 + val1 / 2) * 25;
 			val3 = 50 + 50 * val1;

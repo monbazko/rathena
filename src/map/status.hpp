@@ -1417,6 +1417,7 @@ enum sc_type : int16 {
 	SC_DAWN_MOON,
 	SC_STAR_BURST,
 	SC_SKY_ENCHANT,
+	SC_OVERCOMING_CRISIS,
 	SC_WILD_WALK,
 
 	// Shinkiro/Shiranui
