@@ -2041,6 +2041,11 @@
 	parseable_packet( HEADER_CZ_REQ_EMOTION_EXPANSION, sizeof( struct PACKET_CZ_REQ_EMOTION_EXPANSION ), clif_parse_dull, 0 );
 #endif
 
+#if PACKETVER >= 20230802
+	parseable_packet(HEADER_CZ_REQ_EMOTION2, sizeof(struct PACKET_CZ_REQ_EMOTION2), clif_parse_emotion2, 0);
+	parseable_packet(HEADER_CZ_EMOTION_EXPANTION_REQ, sizeof(struct PACKET_CZ_EMOTION_EXPANTION_REQ), clif_parse_emotion_expansion_request, 0);
+#endif
+
 #if PACKETVER_MAIN_NUM >= 20230802
 	parseable_packet( HEADER_CZ_QUEST_STATUS_REQ, -1, clif_parse_dull, 0 );
 #endif
