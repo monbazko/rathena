@@ -10044,6 +10044,7 @@
 	export_constant(FOOTPRINT_EF_BUTTERFLY_BLUE);
 	export_constant(FOOTPRINT_EF_BUTTERFLY_PURPLE);
 	export_constant(FOOTPRINT_EF_BUTTERFLY_YELLOW);
+	export_constant(HAT_EF_hanmac_munch);
 
 	/* pet catch */
 	export_constant(PET_CATCH_UNIVERSAL_NO_BOSS);
