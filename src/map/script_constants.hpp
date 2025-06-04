@@ -9899,6 +9899,13 @@
 	export_constant(HAT_EF_INKPAINTING_NIGHT);
 	export_constant(HAT_EF_KUNG_FU_PANDA);
 	export_constant(HAT_EF_C_MGSGPH_POTARL);
+	export_constant(HAT_EF_C_Iguazu_Falls);
+	export_constant(FOOTPRINT_EF_blossom);
+	export_constant(FOOTPRINT_EF_bud);
+	export_constant(FOOTPRINT_EF_butterfly_blue);
+	export_constant(FOOTPRINT_EF_butterfly_purple);
+	export_constant(FOOTPRINT_EF_butterfly_yellow);
+	export_constant(HAT_EF_hanmac_munch);
 
 	/* pet catch */
 	export_constant(PET_CATCH_UNIVERSAL_NO_BOSS);

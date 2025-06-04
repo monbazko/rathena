@@ -2162,6 +2162,13 @@ enum e_hat_effects : int16{
 	HAT_EF_INKPAINTING_NIGHT,
 	HAT_EF_KUNG_FU_PANDA,
 	HAT_EF_C_MGSGPH_POTARL,
+	HAT_EF_C_Iguazu_Falls,
+	FOOTPRINT_EF_blossom,
+	FOOTPRINT_EF_bud,
+	FOOTPRINT_EF_butterfly_blue,
+	FOOTPRINT_EF_butterfly_purple,
+	FOOTPRINT_EF_butterfly_yellow,
+	HAT_EF_hanmac_munch = 262,
 	HAT_EF_MAX
 };
 
