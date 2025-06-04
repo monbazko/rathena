@@ -2051,6 +2051,7 @@
 
 #if PACKETVER_MAIN_NUM >= 20240502
 	parseable_packet( HEADER_CZ_GM_CHECKER, sizeof( struct PACKET_CZ_GM_CHECKER ), clif_parse_macro_checker, 0 );
+	packet(0x0bf3,-1);
 #endif
 
 #if PACKETVER_MAIN_NUM >= 20250122
