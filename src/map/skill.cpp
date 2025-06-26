@@ -7115,8 +7115,8 @@ int32 skill_castend_damage_id (struct block_list* src, struct block_list *bl, ui
 		// Holds current direction of bl/target to src/attacker before the src is moved to bl location
 		dir_ka = map_calc_dir(bl, src->x, src->y);
 		// Has slide effect
-		if (skill_check_unit_movepos(5, src, bl->x, bl->y, 1, 1))
-			skill_blown(src, src, 1, (dir_ka + 4) % 8, BLOWN_NONE); // Target position is actually one cell next to the target
+		if (skill_check_unit_movepos(5, src, bl->x + dirx[dir_ka], bl->y + diry[dir_ka], 0, true))
+			clif_blown(src); // Target position is actually one cell next to the target
 		skill_addtimerskill(src, tick + 300, bl->id, 0, 0, skill_id, skill_lv, BF_WEAPON, flag|SD_LEVEL|2);
 		break;
 
